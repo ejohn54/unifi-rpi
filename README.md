@@ -4,8 +4,8 @@ Installing Ubiquity Unifi Controller onto a Raspberry Pi
 Use the command `sudo chmod +x update.sh` for all .sh files to make them executable.
 
 1. Run the `update-unifi-rpi.sh` file to update the Raspberry Pi to the latest.
-2. Run the `disable-default-mongodb.sh` file to disable the default instance of MongoDB.
-3. Run the `install-unifi-controller-5.sh` file to install the Unifi Controller and its requirements.
+2. Run the `install-unifi-controller-5.sh` file to install the Unifi Controller and its requirements.
+3. Run the `disable-default-mongodb.sh` file to disable the default instance of MongoDB.
 
 Optional:
 Setup avahi-daemon to respond to 'raspberrypi.local'.  This allows you to access the Raspberry Pi device by name on your network.
