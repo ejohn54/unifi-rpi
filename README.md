@@ -25,6 +25,6 @@ To schedule automatic updates, enter this command
 `crontab -e`
 
 Choose nano as the editor, then enter the following line on the last line of the file.  
-`0 0 * * SAT sh /home/pi/update.sh 2>/home/pi/logs/cronlog`
+`0 0 * * SAT sh /home/pi/update.sh >> /home/pi/logs/cronlog 2>&1`
 
 This will run the script `update.sh` once a week on Saturday at midnight to update the pi.
