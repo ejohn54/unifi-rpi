@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install avahi with the following commands on the Raspberry Pi:
-sudo apt-get install avahi-daemon
+sudo apt-get install avahi-daemon samba -y
 sudo insserv avahi-daemon
 
 
