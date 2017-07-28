@@ -1,5 +1,8 @@
 #!/bin/sh
 
+echo "================================================================"
+echo "Updating '$(hostname)'...             $(date)"
+
 # Update the package list and update all packages
 sudo apt-get update
 yes | sudo apt-get upgrade --show-upgraded --fix-broken -y 
