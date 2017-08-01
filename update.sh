@@ -3,9 +3,16 @@
 echo "================================================================"
 echo "Updating '$(hostname)'...             $(date)"
 
+DEBIAN_FRONTEND=noninteractive
+
+sudo dpkg --configure -a
+
 # Update the package list and update all packages
 sudo apt-get update
-yes | sudo apt-get upgrade --show-upgraded --fix-broken -y 
+
+#Set the Unifi has_backup configuration setting to true so the debconf prompt will not show.
+echo unifi unifi/has_backup true | sudo debconf-set-selections
+yes | sudo apt-get -u -f -V -y upgrade
 
 # Ensure the latest Raspberry Pi firmware has been applied
 sudo rpi-update 
