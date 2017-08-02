@@ -3,7 +3,7 @@
 echo "================================================================"
 echo "Updating '$(hostname)'...             $(date)"
 
-DEBIAN_FRONTEND=noninteractive
+export DEBIAN_FRONTEND=noninteractive
 
 sudo dpkg --configure -a
 
@@ -11,8 +11,8 @@ sudo dpkg --configure -a
 sudo apt-get update
 
 #Set the Unifi has_backup configuration setting to true so the debconf prompt will not show.
-echo unifi unifi/has_backup true | sudo debconf-set-selections
-yes | sudo apt-get -u -f -V -y upgrade
+echo unifi unifi/has_backup boolean true | sudo debconf-set-selections
+yes | sudo DEBIAN_FRONTEND=noninteractive apt-get -u -f -V -y upgrade
 
 # Ensure the latest Raspberry Pi firmware has been applied
 sudo rpi-update 
