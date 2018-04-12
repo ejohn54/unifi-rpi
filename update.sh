@@ -15,7 +15,8 @@ echo unifi unifi/has_backup boolean true | sudo debconf-set-selections
 yes | sudo -E apt-get -u -f -V -y upgrade
 
 # Ensure the latest Raspberry Pi firmware has been applied
-sudo rpi-update 
+# WARNING: This installs prerelease kernel and firmware.  Use with caution.
+# sudo rpi-update 
 
 # Remove any packages that are no longer required
 sudo apt-get autoremove -y
